@@ -56,7 +56,6 @@ header:after {
 
 /* Hero Section */
 #hero {
-    background: url('https://source.unsplash.com/featured/?technology') no-repeat center center/cover;
     height: 500px;
     color: #000000;
     text-align: center;
@@ -67,6 +66,8 @@ header:after {
 
 #hero h2 {
     font-size: 48px;
+    margin-right: 150px;
+    text-align: center;
     margin-bottom: 80px;
     color: #7e3274;
 }
@@ -110,6 +111,7 @@ header:after {
     background-color: #000000;
     color: #fdfcf8;
     padding: 10px 20px;
+    margin-right: 150px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
