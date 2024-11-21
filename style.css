@@ -3,32 +3,31 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
     line-height: 1.6;
     color: #fdfcf8;
 }
 
 .container {
     width: 80%;
-    margin: 0 auto;
+    margin-left: 150px;
     padding: 20px;
 }
 
 /* Header */
 header {
-    background: #ff4500;
-    color: #fdfcf8;
+    background: #ffffff;
+    color: #000000;
     padding: 10px 0;
     position: relative; /* Enable positioning for the logo */
 }
 
 header h1 {
     float: left;
-    margin-left: 80px; /* Offset to make space for the logo */
+    margin-left: 80px; 
 }
 
 header nav {
@@ -45,7 +44,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #fdfcf8;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -55,20 +54,11 @@ header:after {
     clear: both;
 }
 
-/* Logo in top-left */
-.logo-top-left {
-    position: absolute;
-    top: 10px; /* Adjust for spacing */
-    left: 20px; /* Adjust for spacing */
-    width: 10vw; /* Logo takes 10% of viewport width */
-    height: auto; /* Maintain aspect ratio */
-}
-
 /* Hero Section */
 #hero {
     background: url('https://source.unsplash.com/featured/?technology') no-repeat center center/cover;
     height: 500px;
-    color: #ff4500;
+    color: #000000;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -77,12 +67,47 @@ header:after {
 
 #hero h2 {
     font-size: 48px;
-    margin-bottom: 20px;
-    color: #6b6969;
+    margin-bottom: 80px;
+    color: #7e3274;
 }
 
+/* Image Grid */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 50px; /* Space between images */
+}
+
+.image-grid a {
+    display: block; /* Ensures the entire image area is clickable */
+}
+
+.image-grid img {
+    width: 100%; /* Makes the images responsive */
+    height: auto; /* Preserves aspect ratio */
+    display: block; /* Removes extra spacing around images */
+    border-radius: 5px; /* Optional: Rounds corners */
+    transition: transform 0.3s ease; /* Optional: Adds hover effect */
+}
+
+.image-grid img:hover {
+    transform: scale(1.05); /* Optional: Slight zoom on hover */
+}
+
+.image-grid figure {
+    text-align: center; /* Center the text under each image */
+    margin: 0; /* Remove default margins for figure elements */
+}
+
+.image-grid figcaption {
+    margin-top: 10px; /* Add space between the image and text */
+    font-size: 16px; /* Adjust the text size */
+    color: #000; /* Set text color */
+}
+
+/* CTA Button */
 .cta-button {
-    background-color: #ff4500;
+    background-color: #000000;
     color: #fdfcf8;
     padding: 10px 20px;
     text-decoration: none;
@@ -91,13 +116,14 @@ header:after {
 }
 
 .cta-button:hover {
-    background-color: #a62c00;
+    background-color: #ffb7f6;
+    color: #000000;
 }
 
 /* Section Styles */
 section {
     padding: 60px 0;
-    color: #6b6969;
+    color: #000000;
 }
 
 #services ul {
@@ -107,28 +133,276 @@ section {
 }
 
 #services ul li {
-    background: #ff4500;
-    color:#fdfcf8;
+    background: #000000;
+    color: #fdfcf8;
     padding: 15px;
     width: 200px;
     border-radius: 5px;
     text-align: center;
 }
 
+
 /* Footer */
 footer {
-    background: #ff4500;
+    background: #000000;
     color: #fdfcf8;
     padding: 20px 0;
-    text-align: center;
-    position: relative; /* Enable positioning for the bottom-right logo */
+    position: relative;  
 }
 
-/* Logo in bottom-right */
-.logo-bottom-right {
-    position: absolute;
-    bottom: 10px; /* Adjust for spacing */
-    right: 20px; /* Adjust for spacing */
-    width: 10vw; /* Logo takes 10% of viewport width */
+.footer-content {
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Space items apart */
+    align-items: center; /* Align vertically */
+}
+
+.footer-logo {
+    width: 100px; /* Adjust the logo size */
     height: auto; /* Maintain aspect ratio */
+}
+
+/* Slideshow Section */
+#slideshow-section {
+    text-align: center;
+    background-color: #000000;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slideshow {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    display: none; /* Hide slides by default */
+}
+
+.slide.active {
+    display: block; /* Show active slide */
+}
+
+.slideshow-arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.slideshow-arrows .prev,
+.slideshow-arrows .next {
+    margin: 0 10px;
+}
+
+#further-text {
+    text-align: left;
+    background-color: #050505;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.further-text-container {
+    position: relative;
+    font-size: small;
+    max-width: 600px;
+    margin: 0 auto;
+    color: white;
+    overflow: hidden;
+}
+
+/* Text and Photos Section */
+#text-and-photos {
+    padding: 40px 20px;
+    background-color: #ffffff; /* Background for the section */
+    color: #fff;
+    text-align: center;
+}
+
+.text-container {
+    background-color: #fff; /* White background for the paragraph */
+    color: #000; /* Black text for readability */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Adds depth */
+    max-width: 600px;
+    margin: 0 auto 20px auto; /* Center the text container */
+    text-align: left; /* Align text to the left */
+}
+
+/* Photo Container */
+.photo-container {
+    display: flex; /* Aligns the photos side by side */
+    justify-content: center; /* Centers the items horizontally */
+    gap: 20px; /* Adds spacing between the photos */
+}
+
+.photo-item {
+    text-align: center; /* Centers the photo descriptions */
+    max-width: 300px; /* Adjusts the maximum width of each photo item */
+}
+
+.photo-item img {
+    width: 100%; /* Makes the photos responsive */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 5px; /* Optional: Rounds the corners of photos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adds depth */
+}
+
+.photo-description {
+    margin-top: 10px; /* Space between the photo and description */
+    font-size: 14px; /* Adjusts text size */
+    color: #ccc; /* Optional: Subtle description color */
+}
+
+
+
+.processing-link {
+    display: inline-block; /* Makes the link act like a button */
+    margin-top: 15px; /* Adds spacing above the link */
+    text-decoration: none; /* Removes the underline */
+    color: #ff88ef; /* Link text color */
+    font-weight: bold; /* Makes the link text bold */
+    padding: 8px 15px; /* Adds padding around the link text */
+    border: 2px solid #ffb7f6; /* Adds a border around the link */
+    border-radius: 5px; /* Rounds the edges of the link */
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.processing-link:hover {
+    background-color: #ff88ef; /* Changes background on hover */
+    color: #a51e93; /* Changes text color on hover */
+}
+
+/* Container to hold the photos and text */
+.photo-container {
+    display: flex; /* Aligns the items side by side */
+    justify-content: center; /* Centers the items horizontally */
+    gap: 20px; /* Adds space between the photos */
+    margin: 20px 0; /* Adds some vertical margin */
+}
+
+/* Styling individual photo items */
+.photo-item {
+    text-align: center; /* Centers the text under the photos */
+    max-width: 400px; /* Limits the width of each photo item */
+}
+
+/* Styling the photos */
+.photo-item img {
+    width: 100%; /* Makes the photo responsive */
+    height: auto; /* Keeps the aspect ratio intact */
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
+}
+
+/* Styling the text underneath */
+.photo-description {
+    margin-top: 10px; /* Adds space between the photo and the text */
+    font-size: 16px; /* Adjusts the font size */
+    color: #333; /* Sets the text color */
+}
+
+#custom-section {
+    padding: 40px 0; /* Add some spacing around the section */
+    background-color: #020202; /* Optional background color */
+    color: #ffffff; /* Text color */
+}
+
+.content-wrapper {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between text and links */
+    align-items: flex-start; /* Align items at the top */
+    gap: 20px; /* Space between columns */
+}
+
+.text-content {
+    flex: 2; /* Takes more space */
+    font-size: 16px; /* Adjust font size */
+}
+
+.link-content {
+    flex: 1; /* Takes less space */
+    text-align: right; /* Aligns the links to the right */
+}
+
+.link-content ul {
+    list-style: none; /* Removes default bullet points */
+    padding: 0; /* Removes padding */
+    margin: 0; /* Removes margin */
+}
+
+.link-content ul li {
+    margin-bottom: 10px; /* Adds spacing between links */
+}
+
+.link-content ul li a {
+    color: #ffbdf6;/* Link color */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold; /* Makes the link text bold */
+}
+
+.link-content ul li a:hover {
+    text-decoration: underline; /* Adds underline on hover */
+}
+
+/* General Styles for the Photo Gallery */
+#photo-gallery {
+    padding: 40px 0; /* Add spacing around the section */
+    background-color: #3d264e; /* Optional background color */
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px; /* Space between grid items */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Initial position for animation */
+    transition: all 0.3s ease-in-out; /* Smooth animation */
+}
+
+.gallery-item img {
+    width: 100%; /* Makes images responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Optional rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+/* Animated state when the grid becomes visible */
+.gallery-grid.show {
+    opacity: 1;
+    transform: translateY(0); /* Reset transform to original position */
+}
+
+.footer-navigation {
+    display: flex;
+    justify-content: space-between; /* Places arrows on opposite sides */
+    align-items: center;
+    margin-top: 10px;
+}
+
+.arrow-link {
+    color: #ffb7f6; /* Arrow color */
+    text-decoration: none; /* Removes underline */
+    font-size: 18px; /* Adjusts arrow size */
+    font-weight: bold; /* Makes arrows bold */
+    transition: color 0.3s ease; /* Adds hover effect */
+}
+
+.arrow-link:hover {
+    color: #fdfcf8; /* Changes color on hover */
 }
