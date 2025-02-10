@@ -1,4 +1,4 @@
-// Smooth scrolling for navigation
+/* Smooth scrolling for navigation */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -16,13 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentSlide = 0;
 
     function showSlide(index) {
-        // Hide all slides
+        /* Hide all slides */
         slides.forEach((slide, i) => {
             slide.classList.remove('active');
             slide.style.display = 'none';
         });
 
-        // Show the selected slide
+        /* Show the selected slide */
         slides[index].classList.add('active');
         slides[index].style.display = 'block';
     }
@@ -37,30 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(currentSlide);
     }
 
-    // Event listeners for navigation
+    /* Event listeners for navigation */
     next.addEventListener('click', nextSlide);
     prev.addEventListener('click', prevSlide);
 
-    // Show the first slide by default
+    /* Show the first slide by default */
     showSlide(currentSlide);
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const galleryGrid = document.querySelector('.gallery-grid');
 
-    const handleScroll = () => {
-        const gridPosition = galleryGrid.getBoundingClientRect().top;
-        const screenHeight = window.innerHeight;
 
-        if (gridPosition < screenHeight) {
-            galleryGrid.classList.add('show'); // Add the animation class
-        }
-    };
-
-    // Run on scroll
-    window.addEventListener('scroll', handleScroll);
-
-    // Initial check in case the grid is already in view
-    handleScroll();
-});
 
